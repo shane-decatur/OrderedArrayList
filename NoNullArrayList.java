@@ -8,5 +8,17 @@ public class NoNullArrayList<T> extends ArrayList<T>{
     super(initialCapacity);
   }
 
-  
+  public T set(int index, T element){
+    if (element == null){
+      throw new IllegalArgumentException();
+    }
+    return super.set(index,element);
+  }
+
+  public boolean add(T element){
+    if (element == null){
+      throw new IllegalArgumentException();
+    }
+    return super.add(element);
+  }
 }
