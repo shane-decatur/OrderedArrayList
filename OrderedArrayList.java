@@ -21,5 +21,7 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
     return true;
   }
 
-  
+  public void add(int index,T element){
+    add(element);
+  }
 }
