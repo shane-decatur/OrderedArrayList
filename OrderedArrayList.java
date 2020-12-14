@@ -8,6 +8,9 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
   }
 
   public boolean add(T element){
+    if (element == null){
+      throw new IllegalArgumentException();
+    }
     int index = 0;
     for (int i = 0; i < size(); i++){
       Comparable<T> tempElement = get(i);
@@ -23,5 +26,14 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
 
   public void add(int index,T element){
     add(element);
+  }
+
+  public T set(int index, T element){
+    if (element == null){
+      throw new IllegalArgumentException();
+    }
+    T tempElement = remove(index);
+    add(element);
+    return tempElement;
   }
 }
